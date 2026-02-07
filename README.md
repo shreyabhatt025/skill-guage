@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+---
 
-First, run the development server:
+# AI-Powered Interview Question Generator (n8n Automation)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##  Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This portion contains an **AI-powered automation workflow built using n8n** that generates **personalized interview questions** from a candidate’s resume. The workflow integrates webhooks, HTTP-based APIs, and an AI language model to automate resume analysis and interview preparation.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+The system is designed to minimize manual screening effort and provide **context-aware, role-specific interview questions** in real time.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+##  System Architecture
 
-To learn more about Next.js, take a look at the following resources:
+The automation follows an **event-driven workflow** using n8n:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Webhook Trigger
+2. Resume Data Fetching (HTTP Request)
+3. Resume Parsing / Processing API
+4. AI Model for Question Generation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Each component is modular, scalable, and easily configurable.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+##  Workflow Explanation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 1. Webhook Node
+
+* Acts as the entry point of the workflow.
+* Accepts POST requests containing resume-related data (such as a file URL or extracted text).
+* Automatically triggers the workflow upon request.
+
+**Purpose:** Enables real-time automation and external system integration.
+
+---
+
+### 2. HTTP Request Node (Data Retrieval)
+
+* Fetches resume data from a cloud storage service or external API.
+* Supports secure and scalable document access.
+
+**Purpose:** Retrieves resume content for further processing.
+
+---
+
+### 3. HTTP Request Node (Resume Processing)
+
+* Sends resume data to a parsing or text-extraction service.
+* Extracts relevant information such as:
+
+  * Skills
+  * Work experience
+  * Education
+  * Projects
+
+**Purpose:** Converts unstructured resume data into machine-readable text.
+
+---
+
+### 4. AI Model Node
+
+* Sends extracted resume text to an AI language model.
+* Generates structured interview questions, including:
+
+  * Technical questions
+  * Conceptual questions
+  * Project-based questions
+  * Behavioral and HR questions
+
+**Purpose:** Intelligent and personalized interview question generation.
+
+---
+
+
+
