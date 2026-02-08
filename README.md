@@ -1,6 +1,6 @@
 ## n8n Workflow Diagram
 
-![n8n AI Automation Workflow]
+![n8n AI Automation Workflow] 
 
 ---
 
