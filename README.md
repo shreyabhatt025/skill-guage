@@ -1,6 +1,6 @@
 ## n8n Workflow Diagram
 
-![n8n AI Automation Workflow](https://raw.githubusercontent.com/shreyabhatt025/skill-guage/main/n8n%20workflow.png)
+![n8n AI Automation Workflow]
 
 ---
 
